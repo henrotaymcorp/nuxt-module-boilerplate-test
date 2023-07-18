@@ -11,3 +11,11 @@ resource "doppler_secret" "ci_commons_local_vite_port" {
   name = "LOCAL_VITE_PORT"
   value = data.doppler_secrets.ci_commons.map.LOCAL_VITE_PORT == local.local_env.WEBSOCKET_PORT ? sum([data.doppler_secrets.ci_commons.map.LOCAL_VITE_PORT, 1]) : data.doppler_secrets.ci_commons.map.LOCAL_VITE_PORT
 }
+
+resource "doppler_secret" "local_environment_secrets" {
+  for_each = local.local_env
+  project = doppler_project.app.name
+  config = doppler_environment.local.slug
+  name = each.key
+  value = each.value
+}
