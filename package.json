@@ -1,6 +1,6 @@
 {
   "name": "@henrotaymcorp/nuxt-module-boilerplate-test",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "nuxt-module-boilerplate-test",
   "files": [
     "dist"
