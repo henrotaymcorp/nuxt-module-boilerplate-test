@@ -1,9 +1,4 @@
-import {
-  defineNuxtModule,
-  // createResolver,
-  // addComponent,
-  // addImports,
-} from "@nuxt/kit";
+import { defineNuxtModule, createResolver, addImports } from "@nuxt/kit";
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
@@ -15,15 +10,14 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {},
   setup(_options, _nuxt) {
-    // const resolver = createResolver(import.meta.url);
-    // addComponent({
-    //   name: "TrustupIoToasteo",
-    //   export: "NotificationContainer",
-    //   filePath: "@deegital/vue-trustup-io-toasteo",
-    // });
-    // addImports({
-    //   name: "useToasteo",
-    //   from: "@deegital/vue-trustup-io-toasteo",
-    // });
+    const { resolve } = createResolver(import.meta.url);
+    addImports({
+      name: "useEndpoint",
+      from: resolve("./runtime/composables/index"),
+    });
+    addImports({
+      name: "useModel",
+      from: resolve("./runtime/composables/index"),
+    });
   },
 });
