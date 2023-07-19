@@ -3,7 +3,7 @@ dotenv.config();
 
 export default defineNuxtConfig({
   modules: ["../src/module"],
-  "nuxtModuleBoilerplateTest": {
+  nuxtModuleBoilerplateTest: {
     // @TODO
   },
   postcss: {
@@ -26,5 +26,5 @@ export default defineNuxtConfig({
       },
     },
   },
-  devtools: { enabled: true }
+  devtools: { enabled: true },
 });
