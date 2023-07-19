@@ -1,4 +1,4 @@
-#nuxt-module-boilerplate-test
+# nuxt-module-boilerplate-test
 
 nuxt-module-boilerplate-test
 
